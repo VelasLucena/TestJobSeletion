@@ -1,15 +1,16 @@
 ﻿using Application;
+using System.Text.RegularExpressions;
 
-namespace QuestionOne 
+namespace QuestionOne
 {
     class Operation
     {
         public static void Main(string[] args)
         {
             Console.Write("Insira o indice: ");
-            int indice = Convert.ToInt32(Console.ReadLine());
+            string word = Regex.Replace(Console.ReadLine(), "[^0-9a-zA-Z]+", "");
 
-            int result = App.Calculing(indice);
+            string result = App.Inverting(word);
 
             Console.WriteLine("Resultado: " + result);
         }
